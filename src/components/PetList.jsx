@@ -1,14 +1,13 @@
 import Card from "./Card";
 
-const PetList = () => {
+const PetList = ({data}) => {
+
     return ( 
-        <div className="grid grid-cols-2 gap-4 m-4">
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
-            <Card></Card>
+        <div className="columns-2 gap-4 m-4 space-y-4">
+            {data.animals.map((animal) => (
+                <Card key={animal.id} animal={animal}></Card>
+            ))}
+        
         </div>
      );
 }

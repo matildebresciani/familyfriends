@@ -14,7 +14,7 @@ export default async function Home() {
   return (
     <div>
       <Categories></Categories>
-      <PetList></PetList>
+      <PetList data={animals}></PetList>
     </div>
   );
 }
