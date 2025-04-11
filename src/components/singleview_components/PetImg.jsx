@@ -4,7 +4,7 @@ import Image from "next/image";
 import Arrow from "./Arrow";
 
 
-const PetImg = ({image, breed}) => {
+const PetImg = ({image}) => {
     return ( <div className="relative">
           <Image
             src={image}
@@ -19,7 +19,7 @@ const PetImg = ({image, breed}) => {
                 <Arrow></Arrow>
             </div>
             <div className="absolute bottom-5 left-5">
-                <Breed>{breed}</Breed>
+                <Breed></Breed>
             </div>
     </div> );
 }

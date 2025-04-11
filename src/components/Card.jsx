@@ -7,10 +7,10 @@ import { useRouter } from 'next/navigation'
 
 const Card = ({animal}) => {
     const imageUrl = animal.photos?.[0]?.medium || "/img/placeholder.webp";
-    const router = useRouter()
     return ( 
         
-        <div onClick={() => router.push(`/singleview/${animal.id}`)} className=" rounded-2xl shadow-lg break-inside-avoid cursor-pointer">
+        <Link href={`/singleview/${animal.id}`}>
+        <li className=" rounded-2xl shadow-lg break-inside-avoid cursor-pointer mb-4">
             <div className="relative">
                 <Image
                 src={imageUrl}
@@ -29,8 +29,8 @@ const Card = ({animal}) => {
                 </div>
                 <p className="text-grey max-w-[50%] leading-tight mt-1">{animal.breeds?.primary}</p>
             </div>
-        </div>
-        
+        </li>
+        </Link>
      );
 }
  

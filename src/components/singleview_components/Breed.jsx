@@ -10,7 +10,7 @@ const Breed = ({breed}) => {
         height={40}
         className="rounded-lg">
         </Image>
-        <p breed={breed} className="font-light"></p>
+        <p className="font-light">{breed}</p>
     </div> );
 }
  
