@@ -2,14 +2,19 @@
 
 import FavoriteBtn from "./FavoriteBtn";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
 const Card = ({animal}) => {
+    const imageUrl = animal.photos?.[0]?.medium || "/img/placeholder.webp";
+    const router = useRouter()
     return ( 
-        <div className=" rounded-2xl shadow-lg break-inside-avoid">
+        
+        <div onClick={() => router.push(`/singleview/${animal.id}`)} className=" rounded-2xl shadow-lg break-inside-avoid cursor-pointer">
             <div className="relative">
                 <Image
-                src="https://dbw3zep4prcju.cloudfront.net/animal/425595d9-7162-4204-b1d3-25a3db9bf9b4/image/3f16c88c-9364-45db-a5a2-3c0f0f2978f2.jpg?versionId=6iNs4nnLdLC8mQ2cdTd.zSrdHiH7zD9K&bust=1744096050&width=300"
-                alt="Billede af kæledyr"
+                src={imageUrl}
+                alt={`Billede af ${animal.name}`}
                 width={300}
                 height={200}
                 className="rounded-2xl object-cover aspect-[3/2]" />
@@ -19,12 +24,13 @@ const Card = ({animal}) => {
             </div>
             <div className="flex flex-col px-4 py-3">
                 <div className="flex flex-row justify-between items-end">
-                    <h3 className="text-2xl font-medium text-black">{animal.name}</h3>
+                    <h3 className="text-2xl font-medium text-black wrap-break-word max-w-3/4">{animal.name}</h3>
                     <p className="text-grey">{animal.age}</p>
                 </div>
                 <p className="text-grey max-w-[50%] leading-tight mt-1">{animal.breeds?.primary}</p>
             </div>
         </div>
+        
      );
 }
  

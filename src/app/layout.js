@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={manrope}>
-      <body className="">
+      <body className="max-w-[600px]">
         <Header></Header>
         <main>{children}</main>
         <Footer></Footer>

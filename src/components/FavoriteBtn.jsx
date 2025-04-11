@@ -13,7 +13,7 @@ const FavoriteBtn = () => {
   return (
     <button
       onClick={toggleFavorite}
-      className="bg-gray-200/60 p-1.5 rounded-full"
+      className="bg-gray-200/60 p-1.5 rounded-full cursor-pointer"
       aria-label="Toggle favorite"
     >
       {isFavorite ? (

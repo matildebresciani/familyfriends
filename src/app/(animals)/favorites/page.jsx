@@ -2,7 +2,7 @@ import PetList from "@/components/PetList";
 
 const Favorites = () => {
     return ( 
-        <PetList data={animals}></PetList>
+        <div>Favorites</div>
      );
 }
  
